@@ -13,5 +13,10 @@ namespace ElderVision
 		{
 			InitializeComponent();
 		}
-	}
+
+        private async void buttonAllo_Clicked(object sender, EventArgs e)
+        {
+            var answer = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
+        }
+    }
 }

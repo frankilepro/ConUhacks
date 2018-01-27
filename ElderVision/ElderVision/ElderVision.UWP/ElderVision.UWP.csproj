@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{3E77F27B-783B-4D86-877A-C4CC0F22B7B0}</ProjectGuid>
+    <ProjectGuid>{4C51E723-65C7-4243-816B-3D66E33C4204}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ElderVision.UWP</RootNamespace>

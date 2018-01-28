@@ -11,9 +11,9 @@ namespace ElderVisionAPI.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult Get()
         {
-            return new string[] { "value1", "value2", "value3" };
+            return Redirect("Photo");
         }
 
         // GET api/values/5

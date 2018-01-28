@@ -4,7 +4,7 @@ Framework that recognizes if someone falls
 
 ## App Demo
 
-[![IMAGE ALT TEXT HERE](https://youtu.be/9UWbA_E72DE/sddefault.jpg)](https://youtu.be/9UWbA_E72DE)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/9UWbA_E72DE/sddefault.jpg)](https://youtu.be/9UWbA_E72DE)
 
 [Video](https://www.youtube.com/watch?v=YAz7h-ySxUc)
 

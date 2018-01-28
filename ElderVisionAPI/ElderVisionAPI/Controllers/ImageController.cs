@@ -90,7 +90,7 @@ namespace ElderVisionAPI.Controllers
 
             VisualRecognitionService vr = new VisualRecognitionService();
             vr.SetCredential("8f93d643451fc90c6047cdb1074cd2369bd1cbd8");
-            string[] classifierIds = { "FallingPerson_739654467" };
+            string[] classifierIds = { "Falling_1776823743" };
             var uri = "http://9c2d7edd.ngrok.io/api/image/" + fileId + ".png";
             IBM.WatsonDeveloperCloud.VisualRecognition.v3.Model.ClassifyTopLevelMultiple result = null;
             try
@@ -109,16 +109,16 @@ namespace ElderVisionAPI.Controllers
                 Debug.WriteLine("NULL");
                 return;
             }
-            System.Diagnostics.Debug.WriteLine("Falling: {0}, fell {1}",
+            System.Diagnostics.Debug.WriteLine("Fell: {0}, Standing {1}",
                 result.Images.First().Classifiers.First().Classes[0].Score,
                 result.Images.First().Classifiers.First().Classes[1].Score);
 
-            if (!TwilioSent && result.Images.First().Classifiers.First().Classes[1].Score >= 0.5)
+            if (!TwilioSent && result.Images.First().Classifiers.First().Classes[0].Score >= 0.45)
             {
                 TwilioSent = !TwilioSent;
                 TwilioClient.Init(accounSid, authToken);
                 var message = MessageResource.Create(
-                   to: new PhoneNumber("+15146059990"),
+                   to: new PhoneNumber("+14388883108"),
                    from: new PhoneNumber("+15146127729"),
                    mediaUrl: new List<Uri> { new Uri(uri) },
                    body: "ElderVision: Your elder might be in danger!! See picture to confirm");

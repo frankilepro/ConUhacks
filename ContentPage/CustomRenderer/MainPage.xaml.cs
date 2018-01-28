@@ -8,6 +8,8 @@ namespace CustomRenderer
 		public MainPage ()
 		{
 			InitializeComponent ();
+
+			OnTakePhotoButtonClicked(null, null);
 		}
 
 		async void OnTakePhotoButtonClicked (object sender, EventArgs e)

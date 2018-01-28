@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 			 x:Class="CustomRenderer.MainPage"
-			 Title="Main Page">
+			 Title="Elder Vision">
 	<ContentPage.Content>
 		<StackLayout>
 			<Button x:Name="takePhotoButton" Text="Take Photos" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="OnTakePhotoButtonClicked" />

@@ -19,6 +19,7 @@ namespace CustomRenderer.Droid
 		Timer MyTimer;
 		const int NUMBER_PER_SEC = 1;
 		const int TIME_PER_SEC = 1000;
+		const float CMP_RATE = 0.3f;
 		int Counter;
 
 		global::Android.Hardware.Camera camera;
@@ -64,7 +65,7 @@ namespace CustomRenderer.Droid
 
 		private async void OnTimedEvent(object sender, ElapsedEventArgs e)
 		{
-			var image = textureView.GetBitmap(100, 100);
+			var image = textureView.GetBitmap((int)(textureView.Width * CMP_RATE), (int)(textureView.Height * CMP_RATE));
 			Counter++;
 			System.Diagnostics.Debug.WriteLine("FRANK: " + Counter + " " + DateTime.Now.ToString("mm:ss"));
 			try

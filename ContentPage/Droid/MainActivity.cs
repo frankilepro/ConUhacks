@@ -10,8 +10,8 @@ using Android.OS;
 
 namespace CustomRenderer.Droid
 {
-	[Activity (Label = "CustomRenderer.Droid", 
-		Icon = "@drawable/icon", 
+	[Activity (Label = "ElderVision", 
+		Icon = "@drawable/download", 
 		MainLauncher = true, 
 		ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
 		//ScreenOrientation = ScreenOrientation.Portrait,

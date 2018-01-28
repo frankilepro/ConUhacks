@@ -4,7 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+<<<<<<< HEAD:ContentPage/UWP/CustomRenderer.UWP.csproj
     <ProjectGuid>{B975E2A7-E523-4D62-92B0-41606E74D805}</ProjectGuid>
+=======
+    <ProjectGuid>{4C51E723-65C7-4243-816B-3D66E33C4204}</ProjectGuid>
+>>>>>>> 57355b3fd7a836a408f8f3ea875dd37fcf399164:ElderVision/ElderVision/ElderVision.UWP/ElderVision.UWP.csproj
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CustomRenderer.UWP</RootNamespace>

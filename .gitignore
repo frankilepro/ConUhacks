@@ -184,6 +184,8 @@ FakesAssemblies/
 .DS_Store
 *.lock
 *.ide
-*.sln
 *.ide-shm
 *.ide-wal
+*.projitems
+*.shproj
+*.projitems

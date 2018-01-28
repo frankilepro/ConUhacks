@@ -16,37 +16,41 @@ namespace ElderVisionAPI.Controllers
     [Route("api/Image")]
     public class ImageController : Controller
     {
-        // GET: api/Image
-        [HttpGet]
-        public IEnumerable<string> Get()
+        // GET: api/Image/FilePath
+        [HttpGet("{FilePath}")]
+        public IActionResult Get(string filePath)
         {
-            return new string[] { "value1", "value2" };
+            Byte[] b = System.IO.File.ReadAllBytes(@"C:\Users\granf\Documents\GitHub\ConUhack\tmp\" + filePath);   // You can use your own method over here.         
+            return File(b, "image/png");
         }
 
         // GET: api/Image/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //[HttpGet("{id}", Name = "Get")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
         // POST: api/Image
         [HttpPost]
         public void Post([FromBody]string value)
         {
-            string filePath = @"C:\Users\granf\Documents\GitHub\ConUhack\tmp\" + DateTime.Now.Ticks + ".png";
+            var date = DateTime.Now.Ticks;
+            string filePath = @"C:\Users\granf\Documents\GitHub\ConUhack\tmp\" + date + ".png";
             System.IO.File.WriteAllBytes(filePath, Convert.FromBase64String(value));
             Process.Start(new ProcessStartInfo("cmd", $"/c start {filePath}") { CreateNoWindow = true });
 
             string accounSid = "AC74db4dcc60f91702206b697c0ef368e0";
             string authToken = "1c7051f8bb5fdda9d0e55c053f8fd62a";
 
+            var uri = "https://8d339617.ngrok.io/api/image/" + date + ".png";
+
             TwilioClient.Init(accounSid, authToken);
             var message = MessageResource.Create(
-               to: new PhoneNumber("+15146059990"),
+               to: new PhoneNumber("+14388883108"),
                from: new PhoneNumber("+15146127729"),
-               mediaUrl: new List<Uri> { new Uri("file:///" + filePath) },
-               body: "ElderVision: Your elder might be in danger!! See picture to confirm");
+               body: "ElderVision: Your elder might be in danger!! See picture to confirm",
+               mediaUrl: new List<Uri> { new Uri(uri) });
         }
 
         // PUT: api/Image/5
